@@ -1,2 +1,3 @@
 vconsole: true
 enable_lvm: true
+extra_files: busybox
