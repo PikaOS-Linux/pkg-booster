@@ -13,3 +13,4 @@ install:
 	install -Dp -m755 ./generator/generator "$(DESTDIR)/usr/bin/booster"
 	install -Dp -m644 ./docs/manpage.1 "$(DESTDIR)/usr/share/man/man1/booster.1"
 	install -Dp -m755 ./init/init "$(DESTDIR)/usr/lib/booster/init"
+        install -Dp -m755 ./update-initramfs "$(DESTDIR)/usr/lib/booster/update-initramfs"
