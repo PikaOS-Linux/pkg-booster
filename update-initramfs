@@ -186,7 +186,7 @@ get_sorted_versions()
 	version_list="$(
 		linux-version list |
 		while read -r version; do
-		     test -e "${BOOTDIR}/initrd.img-$version" && echo "$version"
+		     test -e "${BOOTDIR}/booster.img-$version" && echo "$version"
 		done |
 		linux-version sort --reverse
 		)"
@@ -195,7 +195,7 @@ get_sorted_versions()
 
 set_current_version()
 {
-	if [ -f "/boot/initrd.img-$(uname -r)" ]; then
+	if [ -f "/boot/booster.img-$(uname -r)" ]; then
 		version=$(uname -r)
 	fi
 }
@@ -203,19 +203,19 @@ set_current_version()
 set_linked_version()
 {
 	linktarget=
-	if [ -e /initrd.img ] && [ -L /initrd.img ]; then
-		linktarget="$(basename "$(readlink /initrd.img)")"
+	if [ -e /booster.img ] && [ -L /booster.img ]; then
+		linktarget="$(basename "$(readlink /booster.img)")"
 	fi
 
-	if [ -e /boot/initrd.img ] && [ -L /boot/initrd.img ]; then
-		linktarget="$(basename "$(readlink /boot/initrd.img)")"
+	if [ -e /boot/booster.img ] && [ -L /boot/booster.img ]; then
+		linktarget="$(basename "$(readlink /boot/booster.img)")"
 	fi
 
 	if [ -z "${linktarget}" ]; then
 		return
 	fi
 
-	version="${linktarget##initrd.img-}"
+	version="${linktarget##booster.img-}"
 }
 
 set_highest_version()
