@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: ferrreo <harderthanfire@gmail.com>
 Standards-Version: 4.6.1
 Build-Depends: 
- debhelper-compat (= 13), golang-go
+ debhelper-compat (= 13), golang-go, ronn
 Rules-Requires-Root: no
 
 Package: booster
