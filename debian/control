@@ -9,6 +9,6 @@ Rules-Requires-Root: no
 
 Package: booster
 Architecture: linux-any
-Depends: ${misc:Depends}, libdevmapper-dev, libdevmapper-event1.02.1, libdevmapper1.02.1
+Depends: ${misc:Depends}, libdevmapper-dev, libdevmapper-event1.02.1, libdevmapper1.02.1, busybox
 Provides: booster
 Description: booster initramfs generation
