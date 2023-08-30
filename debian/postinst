@@ -2,7 +2,6 @@
 
 set -e
 
-cp -f /usr/sbin/update-initramfs /usr/sbin/update-initramfs-legacy
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
 chmod +x /usr/sbin/update-initramfs
 update-initramfs -c -k all
