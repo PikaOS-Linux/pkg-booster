@@ -3,8 +3,10 @@ all:
 
 install:
 	mkdir -p $(DESTDIR)/usr/bin/
-	cd ./generator ; go build -ldflags="-s -w" -o ./generator -buildvcs=false
-	cd ./init ; go build -ldflags="-s -w" -o ./init -buildvcs=false
+
+  
+	cd ./generator ; go build -trimpath -buildmode=pie -mod=readonly -modcacherw -o ./generator -buildvcs=false
+	cd ./init ; CGO_ENABLED=0 go build -trimpath -mod=readonly -modcacherw ./init -buildvcs=false
 	ronn docs/manpage.md
 	mkdir "$(DESTDIR)/etc/"
 	touch "$(DESTDIR)/etc/booster.yaml"
