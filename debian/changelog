@@ -1,5 +1,11 @@
 booster (0.11.0-99pika7) lunar; urgency=medium
 
+  * Preinst
+
+ -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
+
+booster (0.11.0-99pika7) lunar; urgency=medium
+
   * Enable lvm
 
  -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
