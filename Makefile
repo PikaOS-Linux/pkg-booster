@@ -6,7 +6,7 @@ install:
 
   
 	cd ./generator ; go build -trimpath -buildmode=pie -buildvcs=false -mod=readonly -modcacherw -o ./generator
-	cd ./init ; CGO_ENABLED=0 go build -trimpath -buildvcs=false -mod=readonly -modcacherw ./init
+	cd ./init ; CGO_ENABLED=0 go build -trimpath -buildvcs=false -mod=readonly -modcacherw -o ./init
 	ronn docs/manpage.md
 	mkdir "$(DESTDIR)/etc/"
 	touch "$(DESTDIR)/etc/booster.yaml"
