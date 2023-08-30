@@ -23,6 +23,8 @@ ln -sf /usr/lib/x86_64-linux-gnu/libselinux.so.1 /usr/lib/libselinux.so.1
 ln -sf /usr/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1 /usr/lib/libdevmapper.so.1.02.1
 ln -sf /usr/lib/x86_64-linux-gnu/libdevmapper-event.so.1.02.1 /usr/lib/libdevmapper-event.so.1.02.1
 
+touch /etc/vconsole.conf
+
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
 chmod +x /usr/sbin/update-initramfs
 update-initramfs -c -k all
