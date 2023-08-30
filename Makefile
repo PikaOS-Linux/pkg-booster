@@ -5,7 +5,7 @@ install:
 	mkdir -p $(DESTDIR)/usr/bin/
 	cd ./generator ; go build -ldflags="-s -w" -o ./generator -buildvcs=false
 	cd ./init ; go build -ldflags="-s -w" -o ./init -buildvcs=false
-        ronn docs/manpage.md
+	ronn docs/manpage.md
 	mkdir "$(DESTDIR)/etc/"
 	touch "$(DESTDIR)/etc/booster.yaml"
 	install -Dp -m755 ./generator/generator "$(DESTDIR)/usr/bin/booster"
