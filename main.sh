@@ -7,6 +7,7 @@ git clone https://github.com/anatol/booster.git
 cd booster
 cp -rvf ../debian ./
 cp -f ../Makefile ./Makefile
+cp -f ../booster.yml ./booster.yml
 cp -f ../update-initramfs ./update-initramfs
 
 # Get build deps
