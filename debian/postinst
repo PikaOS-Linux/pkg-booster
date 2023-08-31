@@ -35,6 +35,12 @@ else
 fi
 
 
+# Add nvidia support if an nvidia card is detected
+if lspci -k | grep -iEA3 '^[[:alnum:]]{2}:[[:alnum:]]{2}.*VGA|3D|DISPLAY' | grep -i nvidia
+then
+  # DO NVIDIA BULLSHIT
+fi
+
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
 chmod +x /usr/sbin/update-initramfs
 update-initramfs -c -k all
