@@ -26,24 +26,25 @@ ln -sf /usr/lib/x86_64-linux-gnu/libdevmapper-event.so.1.02.1 /usr/lib/libdevmap
 touch /etc/vconsole.conf
 
 # Check if there are entries in crypttab
-if [[ $(cat /etc/crypttab | grep -v '^#') ]]
+crypt_check=$(cat /etc/crypttab | grep -v '^#' || true)
+if [[ -n $crypt_check ]]
 then
-  # Do nothing
-  true
-else
   # Use the first crypttab entry as luks for booster (valid for calamares and probably most installers)
   if cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | grep -i "UUID="
   then
     # Check if luks is already configured in refind
     if cat /boot/refind_linux.conf | grep -i 'rd.luks'
     then
+        true
+    else
       sed -i "s#root=#rd.luks.name="$(cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")"="$(cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f1)" root=#" /boot/refind_linux.conf
     fi
   else
-    echo -e "ERROR 1: /etc/crypttab is invalid!\nFirst crypttab entry (presumed to be root luks) is not defined via UUID\nPlease make sure to define luks for root as the first entry in /etc/crypttab via UUID (use blkid)"
+    echo -e "ERROR 1: /etc/crypttab is invalid!\nFirst crypttab entry (presumed to be root luks) is not defined via UUID\nPlease make sure to define luks for root as the first entry in /etc/crypttab via UUID (u>
     exit 1
   fi
 fi
+
 
 
 # Add nvidia support if an nvidia card is detected
