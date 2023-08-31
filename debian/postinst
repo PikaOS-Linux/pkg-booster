@@ -28,7 +28,7 @@ touch /etc/vconsole.conf
 # Use the first crypttab entry as luks for booster (valid for calamares and probably most installers)
 if cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | grep -i "UUID="
 then
-  if cat /etc/crypttab | grep -i 'rd.luks'
+  if cat /boot/refind_linux.conf | grep -i 'rd.luks'
   then
     sed -i "s#root=#rd.luks.name="$(cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")"="$(cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f1)" root=#" /boot/refind_linux.conf
   fi
