@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -24,6 +24,16 @@ ln -sf /usr/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1 /usr/lib/libdevmapper.so
 ln -sf /usr/lib/x86_64-linux-gnu/libdevmapper-event.so.1.02.1 /usr/lib/libdevmapper-event.so.1.02.1
 
 touch /etc/vconsole.conf
+
+# Use the first crypttab entry as luks for booster (valid for calamares and probably most installers)
+if cat /etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | grep -i "UUID="
+then
+  sed -i "s#root=#rd.luks.name="$(cat /etc/crypttab | grep -v '^#' | cut -f2 | sed "s#UUID=##")"="$(cat /etc/crypttab | grep -v '^#' | cut -f1)" root=#" /boot/refind_linux.conf
+else
+  echo -e "ERROR 1: /etc/crypttab is invalid!\nFirst crypttab entry (presumed to be root luks) is not defined via UUID\nPlease make sure to define luks for root as the first entry in /etc/crypttab via UUID (use blkid)"
+  exit 1
+fi
+
 
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
 chmod +x /usr/sbin/update-initramfs
