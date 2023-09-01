@@ -3,8 +3,9 @@
 DEBIAN_FRONTEND=noninteractive
 
 # Clone Upstream
-git clone https://github.com/anatol/booster.git
+git clone https://github.com/ferrreo/booster
 cd booster
+git checkout add-debian-elf
 cp -rvf ../debian ./
 cp -f ../Makefile ./Makefile
 cp -f ../booster.yml ./booster.yml
