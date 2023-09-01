@@ -17,6 +17,7 @@ ln -sf /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/libtinfo.so.6
 ln -sf /usr/lib/x86_64-linux-gnu/libedit.so.2 /usr/lib/libedit.so.2
 ln -sf /usr/lib/x86_64-linux-gnu/libm.so.6 /usr/lib/libm.so.6
 ln -sf /usr/lib/x86_64-linux-gnu/libudev.so.1 /usr/lib/libudev.so.1
+ln -sf /usr/lib/x86_64-linux-gnu/liblzma.so.5 /usr/lib/liblzma.so.5
 ln -sf /usr/lib/x86_64-linux-gnu/libc.so.6 /usr/lib/libc.so.6
 ln -sf /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0 /usr/lib/libpcre2-8.so.0
 ln -sf /usr/lib/x86_64-linux-gnu/libselinux.so.1 /usr/lib/libselinux.so.1
