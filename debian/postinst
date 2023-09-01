@@ -50,7 +50,12 @@ fi
 # Add nvidia support if an nvidia card is detected
 if lspci -k | grep -iEA3 '^[[:alnum:]]{2}:[[:alnum:]]{2}.*VGA|3D|DISPLAY' | grep -i nvidia
 then
-  echo 'modules_force_load: nvidia' >> /etc/booster.yaml
+ if cat /etc/booster.yaml | grep -i 'nvidia'
+    then
+	true
+    else
+        echo 'modules_force_load: nvidia' >> /etc/booster.yaml
+ fi
 fi
 
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
