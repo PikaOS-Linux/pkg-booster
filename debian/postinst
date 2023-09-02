@@ -32,7 +32,14 @@ then
     then
 	true
     else
-        echo 'modules_force_load: nvidia' >> /etc/booster.yaml
+        echo 'modules_force_load: nvidia, usbhid' >> /etc/booster.yaml
+ fi
+else
+ if cat /etc/booster.yaml | grep -i 'usbhid'
+    then
+	true
+    else
+        echo 'modules_force_load: usbhid' >> /etc/booster.yaml
  fi
 fi
 
