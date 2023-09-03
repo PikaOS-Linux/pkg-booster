@@ -1,3 +1,9 @@
+booster (0.11.0-99pika21) lunar; urgency=medium
+
+  * Do the config properly
+
+ -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
+
 booster (0.11.0-99pika20) lunar; urgency=medium
 
   * fix usb issues
