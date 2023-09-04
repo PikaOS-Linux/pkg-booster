@@ -24,13 +24,6 @@ then
   fi
 fi
 
-
-# Add nvidia support if an nvidia card is detected
-if lspci -k | grep -iEA3 '^[[:alnum:]]{2}:[[:alnum:]]{2}.*VGA|3D|DISPLAY' | grep -i nvidia && lspci -k | grep -iEA3 '^[[:alnum:]]{2}:[[:alnum:]]{2}.*VGA|3D|DISPLAY' | grep -i -E 'kernel modules|kernel driver' | grep -i nvidia
-then
- sed -i "s#root=#rd.modules_force_load=nvidia,usbhid root=#" /boot/refind_linux.conf
-fi
-
 cp -f /usr/lib/booster/update-initramfs /usr/sbin/update-initramfs
 chmod +x /usr/sbin/update-initramfs
 update-initramfs -c -k all
