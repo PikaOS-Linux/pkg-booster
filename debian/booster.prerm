@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+cp -f /usr/sbin/update-initramfs-legacy /usr/sbin/update-initramfs

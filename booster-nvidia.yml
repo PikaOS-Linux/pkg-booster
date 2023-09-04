@@ -1,4 +1,0 @@
-vconsole: true
-extra_files: busybox
-enable_lvm: true
-modules_force_load: nvidia,usbhid
