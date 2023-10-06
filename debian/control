@@ -10,6 +10,8 @@ Rules-Requires-Root: no
 Package: booster
 Architecture: linux-any
 Depends: ${misc:Depends}, libdevmapper-dev, libdevmapper-event1.02.1, libdevmapper1.02.1, busybox
+Replaces: booster-temp
+Conflicts: booster-temp
 Description: booster initramfs generation
 
 Package: booster-placeholder
@@ -17,3 +19,11 @@ Architecture: linux-any
 Depends: ${misc:Depends}, libdevmapper-dev, libdevmapper-event1.02.1, libdevmapper1.02.1, busybox
 Provides: booster (= ${binary:Version})
 Description: PLACEHOLDER FOR ISO BUILDS DO NOT USE.
+
+Package: booster-temp
+Architecture: linux-any
+Depends: ${misc:Depends}, libdevmapper-dev, libdevmapper-event1.02.1, libdevmapper1.02.1, busybox
+Provides: booster (= ${binary:Version})
+Replaces: booster
+Conflicts: booster
+Description: PLACEHOLDER FOR ISO INSTALLS DO NOT USE.
