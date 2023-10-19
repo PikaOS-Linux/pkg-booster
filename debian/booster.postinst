@@ -7,7 +7,7 @@ touch /etc/vconsole.conf
 if cat /etc/vconsole.conf | grep -i 'KEYMAP='
 then
     true
-e	lse
+else
     echo "KEYMAP="us"" >> /etc/vconsole.conf
 fi
 
