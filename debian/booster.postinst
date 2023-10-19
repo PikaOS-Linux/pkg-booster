@@ -4,6 +4,14 @@ set -e
 
 touch /etc/vconsole.conf
 
+if cat /etc/vconsole.conf | grep -i 'KEYMAP='
+then
+    true
+e	lse
+    echo "KEYMAP="us"" >> /etc/vconsole.conf
+fi
+
+
 # Check if there are entries in crypttab
 crypt_check=$(cat /etc/crypttab | grep -v '^#' || true)
 if [[ -n $crypt_check ]]
