@@ -3,7 +3,7 @@
 DEBIAN_FRONTEND=noninteractive
 
 # Clone Upstream
-git clone https://github.com/anatol/booster.git
+git clone https://github.com/ferrreo/booster.git
 cd booster
 cp -rvf ../debian ./
 cp -f ../Makefile ./Makefile
