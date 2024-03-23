@@ -1,3 +1,9 @@
+booster (0.11.0.git-102pika4) pikauwu; urgency=medium
+
+  * Fix LUKs hid issues in newer kernels
+
+ -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
+
 booster (0.11.0.git-101pika4) pikauwu; urgency=medium
 
   * Update to pikauwu
