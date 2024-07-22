@@ -2,4 +2,7 @@
 
 set -e
 
-cp -f /usr/sbin/update-initramfs /usr/sbin/update-initramfs-legacy
+if [ -f /usr/sbin/update-initramfs ]
+then
+	cp -f /usr/sbin/update-initramfs /usr/sbin/update-initramfs-legacy
+fi
