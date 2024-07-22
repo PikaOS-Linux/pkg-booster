@@ -37,6 +37,4 @@ jobs:
       run: ./main.sh
 
     - name: Release Package
-      run: ./release.sh
-        PURGE_URLS: ${{ vars.PURGE_URLS }}
-        
+      run: ./release.sh       
